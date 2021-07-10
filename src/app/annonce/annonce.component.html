@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Liste des Annonces</h4>
+          <div class="card-header-form"> 
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search"  [(ngModel)]="term">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr >
+                  <th>Voyageur</th>
+                  <th>De</th>
+                  <th>Vers</th>
+                  <th>Date Dep</th>
+                  <th>Poids</th>
+                  <th>Prix</th>
+                  <th>Etat</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tr *ngFor="let a of annonces | filter:term">
+                <td>{{a.nomUser}} {{prenomUser}}</td>
+                <td>{{a.paysDep}}</td>
+                <td>{{a.paysDest}}</td>
+                <td>{{a.dateDep}}</td>
+                <td>{{a.poids}} Kg</td>
+                <td>{{a.prix}} DT</td>
+                <td><span class="badge badge-info">{{a.etat_annonce}}</span></td>
+                <td>
+                  <a  (click)="traiterAnnonce(a.codeAnnonce , 'Active')" class="btn btn-outline-info btn-sm"><i class="fa fa-check"></i></a>
+                  <a  (click)="traiterAnnonce(a.codeAnnonce , 'Inactive')" class="btn btn-outline-danger btn-sm"><i class="fa fa-times"></i></a> 
+                </td>
+              </tr>
+               
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

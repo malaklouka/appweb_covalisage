@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Liste des Utilisateurs</h4>
+          <div class="card-header-form"> 
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search"  [(ngModel)]="term">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>Telephone</th>
+                  <th>E-mail</th>
+                  <th>Sexe</th>
+                  <th>Etat</th>
+                  <th>Action</th> 
+                </tr>
+              </thead>
+              <tr *ngFor="let u of users | filter:term">
+                <td>{{u.nomUser}}</td>
+                <td>{{u.prenomUser}}</td>
+                <td>{{u.telUser}}</td>
+                <td>{{u.mailUser}}</td>
+                <td>{{u.sexeUser}}</td>
+                <td><span class="badge badge-info">{{u.etat_user}}</span></td>
+                <td>
+                  <a  (click)="traiterUser(u.idUser , 'Active')" class="btn btn-outline-info btn-sm"><i class="fa fa-check"></i></a>
+                  <a  (click)="traiterUser(u.idUser , 'Inactive')" class="btn btn-outline-danger btn-sm"><i class="fa fa-times"></i></a> 
+                </td>
+              </tr>
+               
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

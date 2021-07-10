@@ -1,0 +1,36 @@
+<div class="main-sidebar sidebar-style-2"> 
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <a routerLink="/home"> <img alt="image" src="assets/img/faf.PNG" class="header-logo" /> <span
+            class="logo-name">
+          <h3>CoVa<br/><h6>Co-valisage</h6></h3>
+        </span>
+        </a>
+      </div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-picture">
+          <img alt="image" src="assets\img\admm.jpg">
+        </div>
+        <div class="sidebar-user-details">
+          <div class="user-name">{{admin}}</div>
+          <div class="user-role">Administrateur</div>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-header">MENU PRINCIPALE</li>
+        <li class="dropdown">
+          <a href="#" class="menu-toggle nav-link has-dropdown"><i
+              data-feather="briefcase"></i><span>Dashboard</span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a class="nav-link" href="index.html">Dashboard 1</a></li>
+            <li><a class="nav-link" href="index2.html">Dashboard 2</a></li>
+          </ul>
+        </li>
+        
+        <li><a class="nav-link" routerLink="users"><i data-feather="file"></i><span>Liste Utilisateurs</span></a></li>
+        <li><a class="nav-link" routerLink="annonces"><i data-feather="file"></i><span>Liste Annonces</span></a></li>
+        <li><a class="nav-link" routerLink="reclamations"><i data-feather="file"></i><span>Liste Réclamations</span></a></li>
+          
+      </ul>
+    </aside>
+  </div>

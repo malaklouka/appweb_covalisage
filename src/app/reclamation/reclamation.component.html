@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>Liste des Réclamations</h4>
+          <div class="card-header-form"> 
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search"  [(ngModel)]="term">
+                <div class="input-group-btn">
+                  <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+              </div> 
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Réclamant</th>
+                  <th>Date Reclamation</th>
+                  <th>Sujet Reclamation</th>
+                  <th>Contenu </th> 
+                </tr>
+              </thead>
+              <tr *ngFor="let r of reclamations | filter:term"> 
+                <td>{{r.nomUser}} {{r.prenomUser}}</td>
+                <td>{{r.dateRec}}</td>
+                <td>{{r.sujetRec}}</td>
+                <td>{{r.contenueRec}}</td> 
+              </tr>
+               
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
